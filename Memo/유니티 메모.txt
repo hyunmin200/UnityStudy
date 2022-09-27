@@ -1,0 +1,9 @@
+MoveTowards: 등속이동
+Vector3.MoveTowards(현재위치, 목표위치, 속도)
+마지막 매개변수에 비례하여 속도 증가함
+
+SmoothDamp: 부드러운 감속 이동
+Vector3.SmoothDamp(현재위치, 목표위치, 참조 속도, 속도)
+마지막 매개변수에 반비례하여 속도 증가함
+
+ref: 참조 접근 -> 실시간으로 바뀌는 값 적용 가능
