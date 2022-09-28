@@ -1,0 +1,18 @@
+Time.DeltaTime
+사용하는 방법
+Translate : 백터에 곱하기
+transform.Translate(Vec * Time.deltaTime);
+
+Vector 함수 : 시간 매개변수에 곱하기
+Vector3.Lerp(Vec1, Vec2, T * Time.deltaTime);
+
+Time.deltaTime: 이전 프레임의 완료까지 걸린 시간
+
+왜 사용하는가?
+싸구려 컴퓨터 vs 최신형 컴퓨터
+    10fps            60fps      이라고 할 때
+컴퓨터의 성능에 따라 Translate의 이동반경이 달라짐
+이러면 좀 불공평할 수 있다.
+
+deltaTime의 값은 프레임이 적으면 크고, 프레임이 많으면 작음
+그래서 프레임수가 크든 작든 화면에 나오는 값은

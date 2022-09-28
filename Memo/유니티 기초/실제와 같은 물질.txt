@@ -1,0 +1,49 @@
+유니티안에서 해보기
+
+중력 적용하기
+RigidBody: 물리효과를 받기 위한 컴포넌트
+RigidBody를 가지게 되면 중력의 영향을 받는다.
+
+충돌 영역 정하기
+Collider: 물리효과를 받기 위한 컴포넌트
+(중력은 받지만 다른 물체와 부딪치지 못함)
+
+RigidBody 설정
+RigidBody -> Mess: 수치가 높을수록 충돌이 무거워짐(무게와 흡사함)
+RigidBody -> Use Gravity: 중력 받는지를 결정
+RigidBody -> Is Kinematic: 외부 물리 효과를 무시.
+움직이는 함정을 만들 때 유용하다.
+
+재질 만들기
+Material: 오프젝트의 표면 재질을 결정하는 컴포넌트
+Assets -> 우클릭 -> create -> Material
+Albedo: 색상 편집 가능
+재질 편집은 새로 생성해서 적용해야 가능
+Metalic: 금속 재질 수치
+Smoothness: 빛 반사 수치
+
+Albedo 옆에 작은 네모박스에 Texture(재질에 들어가는 이미지)를 넣을 수 있다.
+
+Tiling: 텍스쳐 반복 타일 개수
+소수점으로 주면 소수만큼 텍스쳐가 잘려서 들어간다.
+Emission: 텍스쳐 발광(밝기) 조절
+Emission은 빛이 물리적으로 나오는건 아님
+
+물리 재질 만들기
+Assets -> 우클릭 -> create -> Physic Material
+Physic Material: 탄성과 마찰을 다루는 물리적인 재질
+만들고 Collider에 Material에 넣어주면 된다.
+
+Bounciness: 탄성력, 높을수록 많이 튀어오름.
+Bounciness Combine: 다음 탄성을 계산하는 방식
+
+Friction: 마찰력, 낮을수록 많이 미끄러짐.
+Static Friction: 정지했을 때 마찰력
+Dynamic Friction: 움직일 때 마찰력
+Friction Combine: 다음 마찰력을 계산하는 방식
+
+만화적인 느낌을 내기 위해서는
+Friction 합산은 최소로, Bounciness 합산은 최대로 하는 것이 좋다.
+
+(현실과 비슷한)물체를 만드는 방법 4가지 필수 컴포넌트
+Mesh, Material, Collider, RigidBody

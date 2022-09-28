@@ -1,0 +1,55 @@
+물리 충돌 이벤트
+
+1. 물리 충돌 이벤트
+
+오브젝트의 재질 접근은 MeshRenderer를 통해서 한다.
+MeshRenderer mesh;
+Material met;
+//스타트 구문
+mesh = GetComponect<MeshRenderer>();
+mat = mesh.material;
+
+OnCollisionEnter: 물리적 충돌이 시작할 때 호출되는 함수
+OnCollisionExit: 물리적 충돌이 끝났을 때 호출되는 함수
+OnCollisionStay: 물리적 충돌이 계속 될 때 호출되는 함수
+
+mat.color = new Color(Color32) // 둘 중 하나
+Color: 기본 색상 클래스
+Color32: 255 색상 클래스
+
+Color(1, 1, 1) 흰색
+Color(0, 0 ,0) 검정
+
+Collision: 충돌 정보 클래스
+if(collision.gameObject.name == "게임 오브젝트 이름")
+이런식으로 조건을 많이 준다.
+
+2. 트리거 이벤트
+일단 서론으로
+투명한 재질을 만들고 싶다면
+Rendering Mode를 TransParent로 바꾸고
+Albedo에서 A(알파)값만 내려주면 된다.
+
+트리거를 키기 위해서는
+Collider에서 Is Trigger을 체크 해주면 된다.
+
+충돌 체크를 할 때
+OnCollision과 비슷하게 사용됨
+
+OnTriggerEnter: 콜라이더가 충돌했을 때
+OnTriggerStay: 콜라이더가 계속 충돌하고 있을 때 호줄
+OnTriggerExit: 콜라이더와 충돌이 끝났을 때
+
+Trigger는 물리적인 충돌이 아니라 콜라이더와 겹쳤나? 아닌가를 보는 것이다.
+매개변수로 Collider를 받는다.
+ 
+정리
+//실제 물리적인 충돌로 발생하는 이벤트
+void OnCollisionEnter(Collision collision) { }
+void OnCollisionStay(Collision collision) { }
+void OnCollisionExit(Collision collision) { }
+
+//콜라이더 충돌로 발생하는 이벤트
+void OnTriggerEnter(Collider other) { }
+void OnTriggerStay(Collider other) { }
+void OnTriggerExit(Collider other) { }
